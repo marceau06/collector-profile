@@ -9,7 +9,9 @@ const config = {
 };
 const alchemy = new Alchemy(config);
 
-const contractAddress = process.env.CONTRACT_ADDRESS;
+const TEST_NFT_CONTRACT_ADDRESS = '0x0bA85C729745C7Ff0148b865c61a27058e3974d2'
+const contractAddress = TEST_NFT_CONTRACT_ADDRESS;
+// const contractAddress = process.env.CONTRACT_ADDRESS;
 
 async function extractAttributeTraits() {
   const attributesMap: Record<string, Set<string>> = {};
