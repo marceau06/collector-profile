@@ -1,11 +1,9 @@
-"use client";
-import { createConfig } from 'wagmi';
-import { abstract } from 'viem/chains';
-import { http } from 'wagmi';
+import { getDefaultConfig } from '@rainbow-me/rainbowkit';
+import { sepolia } from 'wagmi/chains';
 
-export const config = createConfig({
-  chains: [abstract] as const,
-  transports: {
-    [abstract.id]: http('https://api.mainnet.abs.xyz'),
-  },
+export const config = getDefaultConfig({
+  appName: 'Collector Profile',
+  projectId: 'VOTRE_PROJECT_ID',
+  chains: [sepolia],
+  ssr: true,
 });
