@@ -4,6 +4,7 @@ import 'dotenv/config';
 import { Alchemy, Network } from 'alchemy-sdk';
 import { useAccount } from 'wagmi';
 import { useState, useEffect } from 'react';
+import { ConnectButton } from '@rainbow-me/rainbowkit';
 import { useLoginWithAbstract } from "@abstract-foundation/agw-react";
 import { checkTraitCompleteness } from "@/lib/traitMatchingService";
 import styles from '@/styles/NFTCard.module.css';
@@ -34,16 +35,20 @@ export default function Home() {
 
   console.log("NFTs raw:", nfts);
 
+  // Ajout du ConnectButton
   if (!isConnected)
     return (
       <div>
-        <button onClick={login}>Connect</button>
+        <h2>Connect your wallet</h2>
+        <ConnectButton /> {}
+        <button onClick={login}>Connect with Abstract</button> {}
       </div>
     );
 
   return (
     <div>
-      <button onClick={logout}>Disconnect</button>
+      <ConnectButton /> {}
+      <button onClick={logout}>Disconnect Abstract</button>
       <p>Connected to: {address}</p>
 
       <h2>Your Characters</h2>
